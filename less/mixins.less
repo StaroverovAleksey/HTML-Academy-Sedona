@@ -1,0 +1,55 @@
+.text-style (@font-weight: normal, @font-size: 14px, @line-height: 21px, @color: #000000) {
+	font-family: "PT Sans";
+	font-style: normal;
+	font-weight: @font-weight;
+	font-size: @font-size;
+	line-height: @line-height;
+	color: @color;
+}
+
+.container() {
+	width: 320px;
+	margin: 0px auto;
+	@media @tablet-widths {
+		width: 768px;
+	}
+	@media @desktop-widths {
+		width: 1200px;
+	}
+}
+
+.delta-left(@color: #ffffff) {
+
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 26px 0 0 160px;
+	border-color: transparent transparent transparent @color;
+	@media @tablet-widths {
+		border-width: 35px 0 0 384px;
+	}
+	@media @desktop-widths {
+		border-width: 57px 0 0 600px;
+	}
+}
+
+.delta-right(@color: #ffffff) {
+
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 26px 160px;
+	border-color: transparent transparent @color transparent;
+	@media @tablet-widths {
+		border-width: 0 0 35px 384px;
+	}
+	@media @desktop-widths {
+		border-width: 0 0 57px 600px;
+	}
+}
